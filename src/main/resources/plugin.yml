@@ -1,0 +1,43 @@
+name: WykantPlugins
+version: ${project.version}
+main: me.cleeryy.wykantplugins.Main
+api-version: 1.17
+authors: [ cleeryy ]
+description: A plugins for Wykant's servers.
+commands:
+  magic:
+    description: Ouvre le Magic menu!
+    usage: /magic
+  mt:
+    description: Te donne ton type Magic!
+    usage: /mt
+  stype:
+    description: Utile pour changer le type d'un joueur spécifié!
+    usage: /stype <player> <team>
+  mreset:
+    description: Reset ton niveau et type Magic
+    usage: /mreset
+  mlevel:
+    description: Ouvre le menu des amélioration Magic!
+    usage: /mlevel
+  slevel:
+    description: Utile pour changer un level Magic spécifique d'un joueur!
+    usage: /slevel <joueur> <catégorie(p1;p2;p3;a1;a2;a3;a4;u)> <nombre(min:1, max:5)>
+  passif:
+    description: Permet d'intéragir avec les options de passif!
+    usage: /passif <enable/disable> <numéro du passif>
+  spawn:
+    description: Permet de se téléporter au spawn
+    usage: /spawn
+  chat:
+    description: Permet de faire parler quelqu'un ehehehehehfhehfbdsfbdsufvs
+    usage: /chat <joueur> <message>
+  gm:
+    description: Raccourcis de la commande /gamemode (avec des chiffres)
+    usage: /gm <chiffre>
+  sit:
+    description: Te permet de t'assoir directement dans le jeu (pour le petit côté rp eheheh)
+    usage: /sit
+  kills:
+    description: Te permet de voir le nombre de points de kill dont tu disposes!
+    usage: /kills
