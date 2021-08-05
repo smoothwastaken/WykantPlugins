@@ -12,7 +12,7 @@ import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
 
-public class passifCommand implements CommandExecutor {
+public class PassifCommand implements CommandExecutor {
 
     public int getLevel(PersistentDataContainer pData, Integer number){
         Integer passifs[] = {Integer.parseInt(pData.get(new NamespacedKey(Main.getPlugin(), "mlp1"), PersistentDataType.STRING)), Integer.parseInt(pData.get(new NamespacedKey(Main.getPlugin(), "mlp2"), PersistentDataType.STRING)), Integer.parseInt(pData.get(new NamespacedKey(Main.getPlugin(), "mlp3"), PersistentDataType.STRING))};
@@ -33,25 +33,67 @@ public class passifCommand implements CommandExecutor {
 
             Integer passifs[] = {Integer.parseInt(passif1Level),Integer.parseInt(passif2Level),Integer.parseInt(passif3Level)};
 
+            String action = args[0];
+            String number = args[1];
+
+            switch (number){
+                case "1":
+                    switch (action){
+                        case "enable":
+
+                            break;
+
+                        case "disable":
+
+                             break;
+                    }
+                    break;
+
+                case "2":
+                    switch (action){
+                        case "enable":
+
+                            break;
+
+                        case "disable":
+
+                            break;
+                    }
+                    break;
+
+                case "3":
+                    switch (action){
+                        case "enable":
+
+                            break;
+
+                        case "disable":
+
+                            break;
+                    }
+                    break;
+            }
+
+
             switch (pType){
                 case "switch":
-                    passifSwitch(p);
+                    passifSwitchEnable(p);
                     break;
 
                 case "fire":
-                    passifFire(p);
+                    passifFireEnable(p);
                     break;
 
                 case "splash":
-                    passifSplash(p);
+                    passifSplashEnable(p);
                     break;
 
                 case "bolt":
-                    passifBolt(p);
+                    passifBoltEnable(p);
                     break;
 
                 case "rock":
-                    passifRock(p);
+                    passifRockEnable(p);
                     break;
             }
         }
@@ -59,7 +101,7 @@ public class passifCommand implements CommandExecutor {
     }
 
 
-    public void passifSwitch(Player p) {
+    public void passifSwitchEnable(Player p) {
         switch (getLevel(p.getPersistentDataContainer(), 1)) {
             case 1:
 
@@ -128,7 +170,7 @@ public class passifCommand implements CommandExecutor {
     }
 
 
-    public void passifFire(Player p) {
+    public void passifFireEnable(Player p) {
         switch (getLevel(p.getPersistentDataContainer(), 1)) {
             case 1:
 
@@ -197,7 +239,7 @@ public class passifCommand implements CommandExecutor {
     }
 
 
-    public void passifSplash(Player p) {
+    public void passifSplashEnable(Player p) {
         switch (getLevel(p.getPersistentDataContainer(), 1)) {
             case 1:
 
@@ -266,7 +308,7 @@ public class passifCommand implements CommandExecutor {
     }
 
 
-    public void passifRock(Player p) {
+    public void passifRockEnable(Player p) {
         switch (getLevel(p.getPersistentDataContainer(), 1)) {
             case 1:
 
@@ -335,7 +377,7 @@ public class passifCommand implements CommandExecutor {
     }
 
 
-    public void passifBolt(Player p) {
+    public void passifBoltEnable(Player p) {
         switch (getLevel(p.getPersistentDataContainer(), 1)) {
             case 1:
                 p.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 999, 0, true, false, false));

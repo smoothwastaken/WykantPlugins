@@ -14,6 +14,7 @@ import me.cleeryy.wykantplugins.general.events.PlayerJoinEventListener;
 import me.cleeryy.wykantplugins.general.events.MagicEvent;
 import me.cleeryy.wykantplugins.levels.commands.SetLevelCommand;
 import me.cleeryy.wykantplugins.levels.events.AddLevelPlayersFirstJoin;
+import me.cleeryy.wykantplugins.passifs.PassifCommand;
 import me.cleeryy.wykantplugins.types.commands.TypeSelectionCommand;
 import me.cleeryy.wykantplugins.types.commands.TypeCommand;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -38,6 +39,7 @@ public final class Main extends JavaPlugin {
         getCommand("gm").setExecutor(new GamemodeCommand());
         getCommand("sit").setExecutor(new SitCommandEvent());
         getCommand("kills").setExecutor(new KillsCommand());
+        getCommand("passif").setExecutor(new PassifCommand());
 
 
         getServer().getPluginManager().registerEvents(new MagicEvent(), this);

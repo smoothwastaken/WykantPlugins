@@ -15,10 +15,14 @@ public class AddLevelPlayersFirstJoin implements Listener {
         Player p = e.getPlayer();
         PersistentDataContainer pData = p.getPersistentDataContainer();
 
-        if (!pData.has(new NamespacedKey(Main.getPlugin(), "mt"), PersistentDataType.STRING)){
-            String levelTypes[] = {"mlp1","mlp2","mlp3","mla1","mla2","mla3","mla4","mlu"};
-            for (int i=0; i < levelTypes.length; i++) {
-                pData.set(new NamespacedKey(Main.getPlugin(), levelTypes[i]), PersistentDataType.STRING, "1");
+        if (!pData.has(new NamespacedKey(Main.getPlugin(), "magicTeam"), PersistentDataType.STRING)){
+            String levelPassifTypes[] = {"mlp1","mlp2","mlp3"};
+            String levelActifsUltimeTypes[] = {"mla1","mla2","mla3","mla4","mlu"};
+            for (int i=0; i < levelPassifTypes.length; i++) {
+                pData.set(new NamespacedKey(Main.getPlugin(), levelPassifTypes[i]), PersistentDataType.STRING, "1");
+            }
+            for (int i=0; i < levelActifsUltimeTypes.length; i++) {
+                pData.set(new NamespacedKey(Main.getPlugin(), levelActifsUltimeTypes[i]), PersistentDataType.STRING, "0");
             }
         }
     }
