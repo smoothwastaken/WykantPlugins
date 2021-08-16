@@ -48,6 +48,7 @@ public final class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new AddLevelPlayersFirstJoin(), this);
         getServer().getPluginManager().registerEvents(new LevelGUIInteractions(), this);
         getServer().getPluginManager().registerEvents(new PlayerKillPlayerEvent(), this);
+        getServer().getPluginManager().registerEvents(new PassifCommand(), this);
     }
 
     public static Main getPlugin() {

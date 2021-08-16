@@ -37,15 +37,15 @@ public class LevelGUIInteractions implements Listener {
                     break;
 
                 case "§bPassif 1":
-                    removePlayerKills(p, 3, "mlp1");
+                    removePlayerKills(p, 2, "mlp1");
                     break;
 
                 case "§bPassif 2":
-                    removePlayerKills(p, 5, "mlp2");
+                    removePlayerKills(p, 4, "mlp2");
                     break;
 
                 case "§bPassif 3":
-                    removePlayerKills(p, 7, "mlp3");
+                    removePlayerKills(p, 5, "mlp3");
                     break;
 
                 case "§6Actif 1":

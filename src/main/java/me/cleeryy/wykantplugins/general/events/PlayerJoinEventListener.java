@@ -2,6 +2,7 @@ package me.cleeryy.wykantplugins.general.events;
 
 import me.cleeryy.wykantplugins.Main;
 import org.bukkit.*;
+import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -14,6 +15,8 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.persistence.PersistentDataContainer;
 import org.bukkit.persistence.PersistentDataType;
+import org.bukkit.scoreboard.ScoreboardManager;
+import org.bukkit.scoreboard.Team;
 
 import java.util.ArrayList;
 
@@ -21,6 +24,7 @@ public class PlayerJoinEventListener implements Listener {
 
     @EventHandler
     public void onPlayerJoin(org.bukkit.event.player.PlayerJoinEvent e) {
+        removeNameTags();
         Player player = (Player) e.getPlayer();
         PersistentDataContainer playerData = (PersistentDataContainer) player.getPersistentDataContainer();
         Inventory playerInventory = (Inventory) player.getInventory();
@@ -239,5 +243,14 @@ public class PlayerJoinEventListener implements Listener {
         }
         pData.set(new NamespacedKey(Main.getPlugin(), "magicTeam"), PersistentDataType.STRING, type);
         p.kickPlayer("Tu dois te reconnecter pour appliquer tes effets!\nC'est pour cela que tu as été kick ;-;");
+    }
+
+
+
+    private void removeNameTags() {
+        String NoTagTeamName = "NoNameTagTeam";
+        Team NoNameTagTeam = Bukkit.getScoreboardManager().getMainScoreboard().getTeam(NoTagTeamName);
+        for (Player player : Bukkit.getServer().getOnlinePlayers())
+            NoNameTagTeam.addEntry(player.getDisplayName());
     }
 }
